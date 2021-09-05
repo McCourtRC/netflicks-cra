@@ -1,9 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import { css, jsx } from '@emotion/react';
 
-const List: FC = ({ children }) => {
+interface Props {
+  children: ReactNode;
+}
+
+const List = ({ children }: Props) => {
   return (
     <ul
       css={css`
