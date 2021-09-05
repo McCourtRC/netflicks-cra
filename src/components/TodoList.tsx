@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { remove } from 'ramda';
 import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem';
 import List from 'lib/List';
@@ -17,11 +18,19 @@ const TodoList = () => {
     setTodo('');
   };
 
+  const removeTodo = (atIndex: number) => {
+    setTodos(remove(atIndex, 1, todos));
+  };
+
   return (
     <div>
       <List>
         {todos.map((todo, index) => (
-          <TodoItem key={index} todo={todo} />
+          <TodoItem
+            key={index}
+            todo={todo}
+            onDelete={() => removeTodo(index)}
+          />
         ))}
       </List>
       <form onSubmit={addTodo}>

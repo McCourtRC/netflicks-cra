@@ -15,18 +15,15 @@ const Item = styled.li`
 
 interface Props {
   todo: Todo;
+  onDelete: () => void;
 }
 
-const TodoItem = ({ todo }: Props) => {
-  const removeItem = (atIndex: string) => {
-    console.log('REMOVE ITEM', atIndex);
-  };
-
+const TodoItem = ({ todo, onDelete }: Props) => {
   return (
     <Item>
       <span>{todo.text}</span>
       <span>
-        <Button onClick={() => removeItem(todo.text)}>X</Button>
+        <Button onClick={onDelete}>X</Button>
       </span>
     </Item>
   );
