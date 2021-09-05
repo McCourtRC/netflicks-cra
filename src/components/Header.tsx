@@ -9,7 +9,12 @@ const Header = () => {
   } = useTheme();
 
   return (
-    <header css={css``}>
+    <header
+      css={css`
+        padding: 1rem;
+        background-color: #cbd5e1;
+      `}
+    >
       <h1
         css={css`
           margin: 0;

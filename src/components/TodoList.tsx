@@ -1,7 +1,8 @@
-import React, { FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem';
 import List from 'lib/List';
+import Input from 'lib/Input';
 
 const TodoList = () => {
   const [todo, setTodo] = useState('');
@@ -22,10 +23,12 @@ const TodoList = () => {
         <TodoItem key={index} todo={todo} />
       ))}
       <form onSubmit={addTodo}>
-        <input
+        <Input
           type='text'
           value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setTodo(e.target.value)
+          }
         />
       </form>
     </List>
