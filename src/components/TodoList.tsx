@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Todo } from 'types';
 import TodoItem from 'components/TodoItem';
 
@@ -6,7 +6,7 @@ interface Props {
   todos: Todo[];
 }
 
-const TodoList = ({ todos }: Props) => {
+const TodoList: FC<Props> = ({ todos }) => {
   return (
     <ul>
       {todos.map((todo, index) => (
