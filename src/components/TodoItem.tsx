@@ -8,7 +8,7 @@ const Item = styled.li`
   padding: 1rem;
   align-items: center;
   justify-content: space-between;
-  :nth-child(even) {
+  :nth-of-type(even) {
     background-color: #dff2f8;
   }
 `;
