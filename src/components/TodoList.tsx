@@ -3,7 +3,6 @@ import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem';
 import List from 'lib/List';
 import Input from 'lib/Input';
-import Button from 'lib/Button';
 
 const TodoList = () => {
   const [todo, setTodo] = useState('');
@@ -33,8 +32,6 @@ const TodoList = () => {
             setTodo(e.target.value)
           }
         />
-        {/* how do i override this style? */}
-        <Button>Hello</Button>
       </form>
     </div>
   );
