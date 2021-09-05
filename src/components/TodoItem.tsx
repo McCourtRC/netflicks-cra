@@ -2,10 +2,6 @@ import React from 'react';
 import { Todo } from 'types/todo';
 import styled from '@emotion/styled';
 
-interface Props {
-  todo: Todo;
-}
-
 const Item = styled.li`
   display: flex;
   padding: 1rem;
@@ -14,6 +10,10 @@ const Item = styled.li`
     background-color: lightblue;
   }
 `;
+
+interface Props {
+  todo: Todo;
+}
 
 const TodoItem = ({ todo }: Props) => {
   const removeItem = (atIndex: string) => {
