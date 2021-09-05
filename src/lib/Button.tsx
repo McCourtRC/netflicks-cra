@@ -11,7 +11,7 @@ const Button = styled.button(
     background-color: ${color};
     :hover {
       color: white;
-      background-color: black;
+      background-color: ${Color.black};
     }
   `
 );
