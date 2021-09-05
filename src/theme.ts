@@ -12,6 +12,7 @@ const breakpoints: BreakPoints = {
 export const theme: Theme = {
   colors: {
     primary: '#E50914',
+    secondary: 'lightblue',
   },
   breakpoints,
 };
