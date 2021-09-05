@@ -6,16 +6,16 @@ import List from 'lib/List';
 import Input from 'lib/Input';
 
 const TodoList = () => {
-  const [todo, setTodo] = useState('');
+  const [input, setInput] = useState('');
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const newTodo: Todo = { text: todo };
+    const newTodo: Todo = { text: input };
 
     setTodos([...todos, newTodo]);
-    setTodo('');
+    setInput('');
   };
 
   const removeTodo = (atIndex: number) => {
@@ -37,9 +37,9 @@ const TodoList = () => {
         <Input
           data-testid='todo-input'
           type='text'
-          value={todo}
+          value={input}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setTodo(e.target.value)
+            setInput(e.target.value)
           }
         />
       </form>
