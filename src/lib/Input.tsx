@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { ComponentProps, HTMLProps } from 'react';
+import React, { HTMLProps } from 'react';
 import { css, jsx } from '@emotion/react';
 
 const Input = (props: HTMLProps<HTMLInputElement>) => {
