@@ -18,10 +18,12 @@ const TodoList = () => {
   };
 
   return (
-    <List>
-      {todos.map((todo, index) => (
-        <TodoItem key={index} todo={todo} />
-      ))}
+    <div>
+      <List>
+        {todos.map((todo, index) => (
+          <TodoItem key={index} todo={todo} />
+        ))}
+      </List>
       <form onSubmit={addTodo}>
         <Input
           type='text'
@@ -31,7 +33,7 @@ const TodoList = () => {
           }
         />
       </form>
-    </List>
+    </div>
   );
 };
 
