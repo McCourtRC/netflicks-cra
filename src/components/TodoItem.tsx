@@ -23,7 +23,9 @@ const TodoItem = ({ todo, onDelete }: Props) => {
     <Item>
       <span>{todo.text}</span>
       <span>
-        <Button onClick={onDelete}>X</Button>
+        <Button data-testid='todo-delete' onClick={onDelete}>
+          X
+        </Button>
       </span>
     </Item>
   );

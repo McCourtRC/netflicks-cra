@@ -35,6 +35,7 @@ const TodoList = () => {
       </List>
       <form onSubmit={addTodo}>
         <Input
+          data-testid='todo-input'
           type='text'
           value={todo}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
