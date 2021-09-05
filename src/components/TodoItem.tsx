@@ -1,6 +1,7 @@
 import React from 'react';
 import { Todo } from 'types/todo';
 import styled from '@emotion/styled';
+import Button from 'lib/Button';
 
 const Item = styled.li`
   display: flex;
@@ -24,7 +25,7 @@ const TodoItem = ({ todo }: Props) => {
     <Item>
       <span>{todo.text}</span>
       <span>
-        <button onClick={() => removeItem(todo.text)}>X</button>
+        <Button onClick={() => removeItem(todo.text)}>X</Button>
       </span>
     </Item>
   );
