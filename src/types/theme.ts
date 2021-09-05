@@ -1,12 +1,12 @@
-export interface Colors {
-  primary: string;
-  secondary: string;
+export enum Color {
+  primary = '#E50914',
+  secondary = 'lightblue',
 }
 
-export interface BreakPoints {
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  xxl: string;
+export enum Breakpoints {
+  sm = '@media(min-width: 640px)',
+  md = '@media(min-width: 768px)',
+  lg = '@media(min-width: 1024px)',
+  xl = '@media(min-width: 1280px)',
+  xxl = '@media(min-width: 1536px)',
 }
