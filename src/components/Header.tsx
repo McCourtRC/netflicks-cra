@@ -6,6 +6,7 @@ import { css, jsx, useTheme } from '@emotion/react';
 const Header = () => {
   const {
     colors: { primary },
+    breakpoints: { md },
   } = useTheme();
 
   return (
@@ -13,6 +14,9 @@ const Header = () => {
       <h1
         css={css`
           color: ${primary};
+          ${md} {
+            color: slateblue;
+          }
         `}
       >
         Net Flicks
