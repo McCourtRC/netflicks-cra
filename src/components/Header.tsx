@@ -1,14 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React from 'react';
-import { css, jsx } from '@emotion/react';
+import { css, jsx, useTheme } from '@emotion/react';
 
 const Header = () => {
+  const {
+    colors: { primary },
+  } = useTheme();
+
   return (
     <header>
       <h1
         css={css`
-          color: #e50914;
+          color: ${primary};
         `}
       >
         Net Flicks
