@@ -1,29 +1,22 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
+import styled from '@emotion/styled';
+import { Theme } from '@emotion/react';
 import React from 'react';
-import { css, jsx, useTheme } from '@emotion/react';
+
+const Container = styled.header`
+  padding: 1rem;
+  background-color: lightblue;
+`;
+
+const Logo = styled.h1`
+  margin: 0;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.primary};
+`;
 
 const Header = () => {
-  const {
-    colors: { primary },
-  } = useTheme();
-
   return (
-    <header
-      css={css`
-        padding: 1rem;
-        background-color: #cbd5e1;
-      `}
-    >
-      <h1
-        css={css`
-          margin: 0;
-          color: ${primary};
-        `}
-      >
-        Net Flicks
-      </h1>
-    </header>
+    <Container>
+      <Logo>Net Flicks</Logo>
+    </Container>
   );
 };
 

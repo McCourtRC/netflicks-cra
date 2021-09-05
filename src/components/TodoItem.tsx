@@ -1,22 +1,32 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
 import React from 'react';
-import { css, jsx } from '@emotion/react';
 import { Todo } from 'types/todo';
+import styled from '@emotion/styled';
 
 interface Props {
   todo: Todo;
 }
 
+const Item = styled.li`
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  :nth-child(even) {
+    background-color: lightblue;
+  }
+`;
+
 const TodoItem = ({ todo }: Props) => {
+  const removeItem = (atIndex: string) => {
+    console.log('REMOVE ITEM', atIndex);
+  };
+
   return (
-    <li
-      css={css`
-        padding: 1rem;
-      `}
-    >
-      {todo.text}
-    </li>
+    <Item>
+      <span>{todo.text}</span>
+      <span>
+        <button onClick={() => removeItem(todo.text)}>X</button>
+      </span>
+    </Item>
   );
 };
 
