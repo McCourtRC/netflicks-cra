@@ -3,12 +3,13 @@ import { Theme } from '@emotion/react';
 import React from 'react';
 
 const Container = styled.header`
-  padding: 1rem;
   background-color: lightblue;
 `;
 
 const Logo = styled.h1`
-  margin: 0;
+  margin: auto;
+  padding: 1rem;
+  max-width: 760px;
   color: ${({ theme }: { theme: Theme }) => theme.colors.primary};
 `;
 

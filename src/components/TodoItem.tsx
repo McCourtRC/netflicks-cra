@@ -6,9 +6,10 @@ import Button from 'lib/Button';
 const Item = styled.li`
   display: flex;
   padding: 1rem;
+  align-items: center;
   justify-content: space-between;
   :nth-child(even) {
-    background-color: lightblue;
+    background-color: #dff2f8;
   }
 `;
 
