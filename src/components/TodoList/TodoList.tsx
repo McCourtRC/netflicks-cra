@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { remove } from 'ramda';
+import { append, remove } from 'ramda';
 import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem';
 import List from 'lib/List';
@@ -14,7 +14,7 @@ const TodoList = () => {
 
     const newTodo: Todo = { text: input };
 
-    setTodos([...todos, newTodo]);
+    setTodos(append(newTodo, todos));
     setInput('');
   };
 
