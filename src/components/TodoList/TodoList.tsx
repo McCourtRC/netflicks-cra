@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Todo } from 'types/todo';
-import TodoItem from 'components/TodoItem';
+import TodoItem from 'components/TodoItem/TodoItem';
 import List from 'lib/List';
 import Input from 'lib/Input';
 import useTodos from 'hooks/useTodos';
