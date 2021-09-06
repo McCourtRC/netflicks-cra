@@ -31,7 +31,6 @@ const TodoList = () => {
       </List>
       <form onSubmit={handleSubmit}>
         <Input
-          data-testid='todo-input'
           type='text'
           value={input}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
