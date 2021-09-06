@@ -4,13 +4,13 @@ import TodoList from './TodoList';
 import userEvent from '@testing-library/user-event';
 
 describe('<TodoList />', () => {
-  it('should have an input element', () => {
+  it('should render an input element', () => {
     render(<TodoList />);
     const input = screen.getByRole('textbox');
     expect(input).toBeInTheDocument();
   });
 
-  it('should add a new list item onSubmit', () => {
+  it('should render a new list item onSubmit', () => {
     render(<TodoList />);
     expect(screen.queryByText('New Item')).not.toBeInTheDocument();
 
