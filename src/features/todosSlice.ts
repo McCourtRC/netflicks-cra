@@ -12,6 +12,7 @@ const initialState: TodosState = {
 const todosSlice = createSlice({
   name: 'todos',
   initialState,
+  // uses immer for immutable updates
   reducers: {
     addTodo({ list }, action: PayloadAction<Todo>) {
       list.push(action.payload);
