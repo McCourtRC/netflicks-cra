@@ -1,25 +1,21 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { append, remove } from 'ramda';
 import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem';
 import List from 'lib/List';
 import Input from 'lib/Input';
+import useTodos from 'hooks/useTodos';
 
 const TodoList = () => {
   const [input, setInput] = useState('');
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const { todos, addTodo, removeTodo } = useTodos();
 
-  const addTodo = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newTodo: Todo = { text: input };
 
-    setTodos(append(newTodo, todos));
+    addTodo(newTodo);
     setInput('');
-  };
-
-  const removeTodo = (atIndex: number) => {
-    setTodos(remove(atIndex, 1, todos));
   };
 
   return (
@@ -33,7 +29,7 @@ const TodoList = () => {
           />
         ))}
       </List>
-      <form onSubmit={addTodo}>
+      <form onSubmit={handleSubmit}>
         <Input
           data-testid='todo-input'
           type='text'
