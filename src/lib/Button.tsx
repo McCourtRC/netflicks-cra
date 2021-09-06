@@ -7,6 +7,7 @@ const Button = styled.button(
     padding: 1rem;
     border: none;
     border-radius: 4px;
+    font-weight: bold;
     color: white;
     background-color: ${color};
     :hover {
