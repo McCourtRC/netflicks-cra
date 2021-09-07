@@ -7,7 +7,7 @@ import useTodos from 'hooks/useTodos';
 import useInput from 'hooks/useInput';
 
 const TodoList = () => {
-  const [input, onChange, resetInput] = useInput('');
+  const [input, onChange, resetInput] = useInput();
   const { todos, addTodo, removeTodo } = useTodos();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
