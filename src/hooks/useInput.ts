@@ -4,17 +4,17 @@ const useInput = (
   initialVal = ''
 ): [
   value: string,
-  onChange: ChangeEventHandler<HTMLInputElement>,
-  reset: () => void
+  onChangeValue: ChangeEventHandler<HTMLInputElement>,
+  resetValue: () => void
 ] => {
   const [value, setValue] = useState(initialVal);
 
-  const onChange: ChangeEventHandler<HTMLInputElement> = (e) =>
+  const onChangeValue: ChangeEventHandler<HTMLInputElement> = (e) =>
     setValue(e.target.value);
 
-  const reset = () => setValue(initialVal);
+  const resetValue = () => setValue(initialVal);
 
-  return [value, onChange, reset];
+  return [value, onChangeValue, resetValue];
 };
 
 export default useInput;
