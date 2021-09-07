@@ -1,23 +1,21 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 import { Todo } from 'types/todo';
 import TodoItem from 'components/TodoItem/TodoItem';
 import List from 'lib/List';
 import Input from 'lib/Input';
 import useTodos from 'hooks/useTodos';
 import useInput from 'hooks/useInput';
+import useSubmit from 'hooks/useSubmit';
 
 const TodoList = () => {
-  const [input, onChange, resetInput] = useInput();
   const { todos, addTodo, removeTodo } = useTodos();
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const [input, onChange, resetInput] = useInput();
+  const onSubmit = useSubmit(() => {
     const newTodo: Todo = { text: input };
 
     addTodo(newTodo);
     resetInput();
-  };
+  });
 
   return (
     <div>
@@ -30,7 +28,7 @@ const TodoList = () => {
           />
         ))}
       </List>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <Input type='text' value={input} onChange={onChange} />
       </form>
     </div>
