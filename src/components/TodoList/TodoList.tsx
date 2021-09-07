@@ -9,7 +9,7 @@ import useSubmit from 'hooks/useSubmit';
 
 const TodoList = () => {
   const { todos, addTodo, removeTodo } = useTodos();
-  const [input, onChange, resetInput] = useInput();
+  const [input, onChangeInput, resetInput] = useInput();
   const onSubmit = useSubmit(() => {
     const newTodo: Todo = { text: input };
 
@@ -29,7 +29,7 @@ const TodoList = () => {
         ))}
       </List>
       <form onSubmit={onSubmit}>
-        <Input type='text' value={input} onChange={onChange} />
+        <Input type='text' value={input} onChange={onChangeInput} />
       </form>
     </div>
   );
